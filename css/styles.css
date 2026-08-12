@@ -1,0 +1,325 @@
+/* ==========================================================================
+   Reset base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Foco accesible, igual al del sitio de referencia */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding-y-mobile) var(--container-padding-x);
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-top: var(--container-padding-y-desktop);
+    padding-bottom: var(--container-padding-y-desktop);
+  }
+}
+
+.section {
+  margin-bottom: var(--space-section-gap);
+}
+
+.section:last-of-type {
+  margin-bottom: 0;
+}
+
+.section-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-heading-gap);
+}
+
+/* ==========================================================================
+   Links de texto (inline, dentro de párrafos/bio)
+   ========================================================================== */
+
+.link {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-base) var(--ease-out);
+}
+
+.link:hover {
+  text-decoration-color: var(--color-link-underline-hover);
+}
+
+/* ==========================================================================
+   Intro
+   ========================================================================== */
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-heading-gap);
+}
+
+.intro__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Descomentar cuando haya foto de perfil:
+.intro__avatar {
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+*/
+
+.intro__name {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+}
+
+.intro__role {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-snug);
+}
+
+.intro__bio {
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+/* ==========================================================================
+   Contribuciones GitHub
+   ========================================================================== */
+
+.contrib-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-card-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contrib-card__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+.contrib-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.contrib-grid__week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contrib-grid__cell {
+  width: 9px;
+  height: 9px;
+  border-radius: var(--radius-xs);
+  background-color: var(--color-contrib-0);
+}
+
+.contrib-grid__cell.is-empty {
+  background-color: transparent;
+}
+
+.contrib-grid__cell[data-level="1"] {
+  background-color: var(--color-contrib-1);
+}
+.contrib-grid__cell[data-level="2"] {
+  background-color: var(--color-contrib-2);
+}
+.contrib-grid__cell[data-level="3"] {
+  background-color: var(--color-contrib-3);
+}
+.contrib-grid__cell[data-level="4"] {
+  background-color: var(--color-contrib-4);
+}
+
+.contrib-card__state {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+}
+
+/* ==========================================================================
+   Proyectos (formato posteo)
+   ========================================================================== */
+
+.post-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--color-border);
+  transition: opacity var(--transition-base) var(--ease-out);
+}
+
+.post-list .post-item:first-child {
+  padding-top: 0;
+}
+
+.post-list .post-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.post-item:hover {
+  opacity: 0.72;
+}
+
+.post-item__title {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.post-item__excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--leading-normal);
+}
+
+.post-item__meta {
+  font-size: var(--text-xs);
+  color: var(--color-text-tertiary);
+}
+
+/* ==========================================================================
+   Contacto
+   ========================================================================== */
+
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.link-list a {
+  display: inline-block;
+  width: fit-content;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-decoration-line: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 3px;
+  transition: text-decoration-color var(--transition-base) var(--ease-out);
+}
+
+.link-list a:hover {
+  text-decoration-color: var(--color-link-underline-hover);
+}
+
+/* ==========================================================================
+   Página de detalle de proyecto
+   ========================================================================== */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--space-section-gap);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.project-detail__title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--leading-snug);
+  margin-bottom: var(--space-heading-gap);
+}
+
+.project-detail__meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-section-gap);
+}
+
+.project-detail__body p {
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-paragraph-gap);
+}
+
+.project-detail__body p:last-child {
+  margin-bottom: 0;
+}

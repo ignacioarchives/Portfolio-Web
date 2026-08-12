@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ignacio Pacheco — Product Designer</title>
+  <meta
+    name="description"
+    content="Ignacio Pacheco, Product Designer. Sistemas visuales consistentes y experiencias digitales de alto impacto."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <!-- ================= INTRO ================= -->
+    <header class="intro section">
+      <div class="intro__header">
+        <!--
+          TODO: cuando tengas foto de perfil, descomentá esta línea
+          y el bloque ".intro__avatar" en css/styles.css
+          <img src="assets/avatar.jpg" alt="Ignacio Pacheco" class="intro__avatar" />
+        -->
+        <div>
+          <h1 class="intro__name">Ignacio Pacheco</h1>
+          <p class="intro__role">Product Designer</p>
+        </div>
+      </div>
+      <p class="intro__bio">
+        Con más de 2 años de práctica en empresas de todos los tamaños, me
+        especializo en crear sistemas visuales consistentes y experiencias
+        digitales de alto impacto. Para trabajar juntos contactame en
+        <!-- TODO: el email se recibió incompleto ("ignaciopdesign@gmail"); confirmar que el dominio sea @gmail.com -->
+        <a href="mailto:ignaciopdesign@gmail.com" class="link"
+          >ignaciopdesign@gmail.com</a
+        >
+        o en
+        <!-- TODO: reemplazar "#" por la URL real de LinkedIn -->
+        <a href="#" class="link" target="_blank" rel="noopener">LinkedIn</a>.
+      </p>
+    </header>
+
+    <!-- ================= CONTRIBUCIONES GITHUB ================= -->
+    <section class="section" id="contribuciones" aria-labelledby="contribuciones-title">
+      <h2 class="section-title" id="contribuciones-title">Contribuciones en GitHub</h2>
+      <!-- Grid real, se completa client-side desde js/github-contributions.js -->
+      <div class="contrib-card" id="github-contributions">
+        <p class="contrib-card__state">Cargando contribuciones…</p>
+      </div>
+    </section>
+
+    <!-- ================= PROYECTOS ================= -->
+    <section class="section" id="proyectos" aria-labelledby="proyectos-title">
+      <h2 class="section-title" id="proyectos-title">Proyectos</h2>
+      <!-- TODO: reemplazar título, descripción, año y link de cada proyecto. Duplicar/borrar .post-item según necesites. -->
+      <div class="post-list">
+        <a href="proyectos/proyecto-1.html" class="post-item">
+          <span class="post-item__title">Nombre del proyecto 1</span>
+          <span class="post-item__excerpt"
+            >Descripción corta de una línea sobre qué es y qué problema resuelve.</span
+          >
+          <span class="post-item__meta">2026</span>
+        </a>
+        <a href="proyectos/proyecto-2.html" class="post-item">
+          <span class="post-item__title">Nombre del proyecto 2</span>
+          <span class="post-item__excerpt"
+            >Descripción corta de una línea sobre qué es y qué problema resuelve.</span
+          >
+          <span class="post-item__meta">2025</span>
+        </a>
+        <a href="proyectos/proyecto-3.html" class="post-item">
+          <span class="post-item__title">Nombre del proyecto 3</span>
+          <span class="post-item__excerpt"
+            >Descripción corta de una línea sobre qué es y qué problema resuelve.</span
+          >
+          <span class="post-item__meta">2025</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= CONTACTO ================= -->
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <h2 class="section-title" id="contacto-title">Contacto</h2>
+      <ul class="link-list">
+        <!-- TODO: confirmar dominio de email -->
+        <li><a href="mailto:ignaciopdesign@gmail.com">Email</a></li>
+        <!-- TODO: reemplazar "#" por la URL real de LinkedIn -->
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li>
+          <a href="https://github.com/ignacioarchives" target="_blank" rel="noopener"
+            >GitHub</a
+          >
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/github-contributions.js" defer></script>
+</body>
+</html>
