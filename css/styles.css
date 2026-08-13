@@ -83,7 +83,7 @@ button:focus-visible {
 
 .section-title {
   font-size: var(--text-base);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   line-height: var(--leading-relaxed);
   margin-bottom: var(--space-heading-gap);
@@ -104,6 +104,18 @@ button:focus-visible {
 
 .link:hover {
   text-decoration-color: var(--color-link-underline-hover);
+}
+
+/* ==========================================================================
+   Íconos (sprite SVG, ver <symbol> al inicio del <body>)
+   ========================================================================== */
+
+.icon-arrow {
+  width: 1rem; /* 16px */
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-base) var(--ease-out);
 }
 
 /* ==========================================================================
@@ -171,6 +183,14 @@ button:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  margin: 0 -0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-xl);
+  transition: background-color var(--transition-base) var(--ease-out);
+}
+
+.post-item:hover {
+  background-color: var(--color-row-hover-bg);
 }
 
 .post-item__title {
@@ -181,14 +201,9 @@ button:focus-visible {
   transition: color var(--transition-base) var(--ease-out);
 }
 
-.post-item__arrow {
-  font-size: var(--text-sm);
-  color: var(--color-text-tertiary);
-  transition: color var(--transition-base) var(--ease-out);
-}
-
 .post-item:hover .post-item__title,
-.post-item:hover .post-item__arrow {
+.post-item:hover .post-item__meta,
+.post-item:hover .icon-arrow {
   color: var(--color-text-primary);
 }
 
@@ -197,6 +212,7 @@ button:focus-visible {
   font-size: var(--text-base);
   color: var(--color-text-tertiary);
   white-space: nowrap;
+  transition: color var(--transition-base) var(--ease-out);
 }
 
 /* ==========================================================================
@@ -214,6 +230,14 @@ button:focus-visible {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+  margin: 0 -0.75rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: var(--radius-xl);
+  transition: background-color var(--transition-base) var(--ease-out);
+}
+
+.edu-item:hover {
+  background-color: var(--color-row-hover-bg);
 }
 
 .edu-item__left {
@@ -231,7 +255,8 @@ button:focus-visible {
 }
 
 .edu-item:hover .edu-item__institution,
-.edu-item:hover .post-item__arrow {
+.edu-item:hover .edu-item__year,
+.edu-item:hover .icon-arrow {
   color: var(--color-text-primary);
 }
 
@@ -245,6 +270,7 @@ button:focus-visible {
   font-size: var(--text-base);
   color: var(--color-text-tertiary);
   white-space: nowrap;
+  transition: color var(--transition-base) var(--ease-out);
 }
 
 /* ==========================================================================

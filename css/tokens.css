@@ -25,6 +25,9 @@
   --color-accent-bg: #e7f0ff;
   --color-accent-text: #1a5fd6;
 
+  /* Pill de fondo al hacer hover sobre filas de listas (proyectos/educación) */
+  --color-row-hover-bg: rgba(0, 0, 0, 0.04);
+
   /* ---- Tipografía ---- */
   /* Fuente original del sitio de referencia: Inter self-hosted vía next/font.
      Acá se carga como Google Font, mismo resultado visual sin build step. */
@@ -56,11 +59,11 @@
 
   --space-section-gap: 6rem;     /* 96px — separación entre secciones (proyectos/contacto) */
   --space-intro-section-gap: 4.125rem; /* 66px — separación entre intro y proyectos */
-  --space-heading-gap: 0.75rem;  /* mb-3: heading -> contenido de sección */
+  --space-heading-gap: 1rem;  /* 16px: heading -> contenido de sección */
   --space-intro-gap: 1.5rem;     /* 24px — entre foto+nombre/profesión y el texto de la bio */
   --space-paragraph-gap: 1rem;   /* mb-4: entre párrafos */
   --space-bio-paragraph-gap: 0.875rem; /* separación entre los párrafos de la bio */
-  --space-post-item-gap:  1rem;   /* 16px — separación entre filas de la lista de proyectos */
+  --space-post-item-gap: 0.25rem; /* 4px — separación entre filas (el padding de cada fila suma el resto) */
   --space-card-padding: 1rem;    /* 16px padding interno de cards */
 
   /* ---- Bordes ---- */

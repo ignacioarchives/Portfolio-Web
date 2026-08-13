@@ -20,6 +20,31 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Sprite de íconos reutilizables (Phosphor Icons, bold). Se referencian con <use href="#icon-..."> -->
+  <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden">
+    <symbol id="icon-arrow-up-right" viewBox="0 0 256 256">
+      <line
+        x1="64"
+        y1="192"
+        x2="192"
+        y2="64"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"
+      />
+      <polyline
+        points="88 64 192 64 192 168"
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="24"
+      />
+    </symbol>
+  </svg>
+
   <main class="container">
     <!-- ================= INTRO ================= -->
     <header class="intro section">
@@ -61,21 +86,21 @@
         <a href="proyectos/proyecto-1.html" class="post-item">
           <span class="post-item__title"
             >MontoApp
-            <span class="post-item__arrow" aria-hidden="true">&#8599;</span></span
+            <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
           >
           <span class="post-item__meta">Product + Website</span>
         </a>
         <a href="proyectos/proyecto-2.html" class="post-item">
           <span class="post-item__title"
             >Facilita360
-            <span class="post-item__arrow" aria-hidden="true">&#8599;</span></span
+            <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
           >
           <span class="post-item__meta">Branding + Web (Framer)</span>
         </a>
         <a href="proyectos/proyecto-3.html" class="post-item">
           <span class="post-item__title"
             >Jesusaves
-            <span class="post-item__arrow" aria-hidden="true">&#8599;</span></span
+            <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
           >
           <span class="post-item__meta">Branding</span>
         </a>
@@ -91,7 +116,7 @@
           <span class="edu-item__left">
             <span class="edu-item__institution"
               >Nombre de la institución
-              <span class="post-item__arrow" aria-hidden="true">&#8599;</span></span
+              <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
             >
             <span class="edu-item__title">Título</span>
           </span>
@@ -101,7 +126,7 @@
           <span class="edu-item__left">
             <span class="edu-item__institution"
               >Nombre de la institución
-              <span class="post-item__arrow" aria-hidden="true">&#8599;</span></span
+              <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
             >
             <span class="edu-item__title">Título</span>
           </span>
