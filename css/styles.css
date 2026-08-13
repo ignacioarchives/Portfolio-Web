@@ -113,7 +113,8 @@ button:focus-visible {
 .intro {
   display: flex;
   flex-direction: column;
-  gap: var(--space-heading-gap);
+  gap: var(--space-intro-gap);
+  margin-bottom: var(--space-intro-section-gap);
 }
 
 .intro__header {
