@@ -60,6 +60,7 @@
   --space-intro-gap: 1.5rem;     /* 24px — entre foto+nombre/profesión y el texto de la bio */
   --space-paragraph-gap: 1rem;   /* mb-4: entre párrafos */
   --space-bio-paragraph-gap: 0.875rem; /* separación entre los párrafos de la bio */
+  --space-post-item-gap:  1rem;   /* 16px — separación entre filas de la lista de proyectos */
   --space-card-padding: 1rem;    /* 16px padding interno de cards */
 
   /* ---- Bordes ---- */

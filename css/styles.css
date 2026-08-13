@@ -163,44 +163,88 @@ button:focus-visible {
 .post-list {
   display: flex;
   flex-direction: column;
+  gap: var(--space-post-item-gap);
 }
 
 .post-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.875rem 0;
-  border-bottom: 1px solid var(--color-border);
-  transition: opacity var(--transition-base) var(--ease-out);
-}
-
-.post-list .post-item:first-child {
-  padding-top: 0;
-}
-
-.post-list .post-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
-
-.post-item:hover {
-  opacity: 0.72;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .post-item__title {
-  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base) var(--ease-out);
+}
+
+.post-item__arrow {
+  font-size: var(--text-sm);
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-base) var(--ease-out);
+}
+
+.post-item:hover .post-item__title,
+.post-item:hover .post-item__arrow {
   color: var(--color-text-primary);
 }
 
-.post-item__excerpt {
-  font-size: var(--text-sm);
-  color: var(--color-text-secondary);
-  line-height: var(--leading-normal);
+.post-item__meta {
+  flex-shrink: 0;
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
 }
 
-.post-item__meta {
-  font-size: var(--text-xs);
+/* ==========================================================================
+   Educación
+   ========================================================================== */
+
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-post-item-gap);
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.edu-item__left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.edu-item__institution {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base) var(--ease-out);
+}
+
+.edu-item:hover .edu-item__institution,
+.edu-item:hover .post-item__arrow {
+  color: var(--color-text-primary);
+}
+
+.edu-item__title {
+  font-size: var(--text-sm);
   color: var(--color-text-tertiary);
+}
+
+.edu-item__year {
+  flex-shrink: 0;
+  font-size: var(--text-base);
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
 }
 
 /* ==========================================================================
