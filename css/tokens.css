@@ -54,7 +54,7 @@
   --container-padding-y-mobile: 3rem;   /* 48px */
   --container-padding-y-desktop: 6rem;  /* 96px */
 
-  --space-section-gap: 3rem;     /* separación entre secciones (header/proyectos/contacto) */
+  --space-section-gap: 6rem;     /* 96px — separación entre secciones (header/proyectos/contacto) */
   --space-heading-gap: 0.75rem;  /* mb-3: heading -> contenido de sección */
   --space-paragraph-gap: 1rem;   /* mb-4: entre párrafos */
   --space-bio-paragraph-gap: 0.875rem; /* separación entre los párrafos de la bio */
