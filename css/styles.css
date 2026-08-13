@@ -122,7 +122,6 @@ button:focus-visible {
   gap: 0.75rem;
 }
 
-/* Descomentar cuando haya foto de perfil:
 .intro__avatar {
   width: var(--avatar-size);
   height: var(--avatar-size);
@@ -130,7 +129,6 @@ button:focus-visible {
   object-fit: cover;
   flex-shrink: 0;
 }
-*/
 
 .intro__name {
   font-size: var(--text-base);
@@ -149,7 +147,7 @@ button:focus-visible {
 .intro__bio-group {
   display: flex;
   flex-direction: column;
-  gap: var(--space-paragraph-gap);
+  gap: var(--space-bio-paragraph-gap);
 }
 
 .intro__bio {

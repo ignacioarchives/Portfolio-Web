@@ -57,6 +57,7 @@
   --space-section-gap: 3rem;     /* separación entre secciones (header/proyectos/contacto) */
   --space-heading-gap: 0.75rem;  /* mb-3: heading -> contenido de sección */
   --space-paragraph-gap: 1rem;   /* mb-4: entre párrafos */
+  --space-bio-paragraph-gap: 0.875rem; /* separación entre los párrafos de la bio */
   --space-card-padding: 1rem;    /* 16px padding interno de cards */
 
   /* ---- Bordes ---- */
@@ -68,7 +69,7 @@
   --radius-2xl: 1rem;
   --radius-full: 9999px;
 
-  --avatar-size: 2.75rem; /* 44px */
+  --avatar-size: 2.75rem; /* 44px — calza con el alto del bloque nombre+rol (22px + 22px) */
 
   /* ---- Sombras ---- */
   --shadow-card: 0 0 0 1px rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.06),
