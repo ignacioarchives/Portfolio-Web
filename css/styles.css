@@ -146,6 +146,12 @@ button:focus-visible {
   line-height: var(--leading-snug);
 }
 
+.intro__bio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-paragraph-gap);
+}
+
 .intro__bio {
   color: var(--color-text-secondary);
   line-height: var(--leading-relaxed);
