@@ -25,13 +25,6 @@
   --color-accent-bg: #e7f0ff;
   --color-accent-text: #1a5fd6;
 
-  /* Escala de verdes estilo GitHub para el grid de contribuciones */
-  --color-contrib-0: #ebedf0;
-  --color-contrib-1: #9be9a8;
-  --color-contrib-2: #40c463;
-  --color-contrib-3: #30a14e;
-  --color-contrib-4: #216e39;
-
   /* ---- Tipografía ---- */
   /* Fuente original del sitio de referencia: Inter self-hosted vía next/font.
      Acá se carga como Google Font, mismo resultado visual sin build step. */
@@ -61,7 +54,7 @@
   --container-padding-y-mobile: 3rem;   /* 48px */
   --container-padding-y-desktop: 6rem;  /* 96px */
 
-  --space-section-gap: 3rem;     /* separación entre secciones (header/contrib/proyectos/contacto) */
+  --space-section-gap: 3rem;     /* separación entre secciones (header/proyectos/contacto) */
   --space-heading-gap: 0.75rem;  /* mb-3: heading -> contenido de sección */
   --space-paragraph-gap: 1rem;   /* mb-4: entre párrafos */
   --space-card-padding: 1rem;    /* 16px padding interno de cards */
