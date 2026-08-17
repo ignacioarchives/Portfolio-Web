@@ -78,21 +78,21 @@
     <section class="section" id="proyectos" aria-labelledby="proyectos-title">
       <h2 class="section-title reveal" id="proyectos-title" style="--stagger-index: 3">Proyectos</h2>
       <div class="post-list reveal" style="--stagger-index: 4">
-        <a href="proyectos/proyecto-1.html" class="post-item">
+        <a href="proyectos/proyecto-1.html" class="post-item" data-cuelume-press>
           <span class="post-item__title"
             >MontoApp
             <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
           >
           <span class="post-item__meta">Product + Website</span>
         </a>
-        <a href="proyectos/proyecto-2.html" class="post-item">
+        <a href="proyectos/proyecto-2.html" class="post-item" data-cuelume-press>
           <span class="post-item__title"
             >Facilita360
             <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
           >
           <span class="post-item__meta">Branding + Web (Framer)</span>
         </a>
-        <a href="proyectos/proyecto-3.html" class="post-item">
+        <a href="proyectos/proyecto-3.html" class="post-item" data-cuelume-press>
           <span class="post-item__title"
             >Jesusaves
             <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
@@ -106,7 +106,7 @@
     <section class="section" id="educacion" aria-labelledby="educacion-title">
       <h2 class="section-title reveal" id="educacion-title" style="--stagger-index: 5">Educación</h2>
       <div class="edu-list reveal" style="--stagger-index: 6">
-        <a href="#" class="edu-item">
+        <a href="#" class="edu-item" data-cuelume-press>
           <span class="edu-item__left">
             <span class="edu-item__institution"
               >Universidad de Buenos Aires
@@ -116,7 +116,7 @@
           </span>
           <span class="edu-item__year">2023 - Presente</span>
         </a>
-        <a href="#" class="edu-item">
+        <a href="#" class="edu-item" data-cuelume-press>
           <span class="edu-item__left">
             <span class="edu-item__institution"
               >Coderhouse
@@ -143,5 +143,10 @@
       </ul>
     </section>
   </main>
+
+  <script type="module">
+    import { bind } from "https://unpkg.com/cuelume@0.2.2/dist/index.js";
+    bind();
+  </script>
 </body>
 </html>
