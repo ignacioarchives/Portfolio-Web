@@ -362,3 +362,54 @@ button:focus-visible {
 .project-detail__body p:last-child {
   margin-bottom: 0;
 }
+
+.project-hero {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-2xl);
+  border: 1px dashed var(--color-border);
+  background-color: var(--color-card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-section-gap);
+}
+
+.project-detail__divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0 0 var(--space-section-gap);
+}
+
+.project-scope {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-top: var(--space-heading-gap);
+}
+
+.project-scope__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-scope__row:last-child {
+  border-bottom: none;
+}
+
+.project-scope__label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.project-scope__value {
+  color: var(--color-text-secondary);
+  text-align: right;
+}
