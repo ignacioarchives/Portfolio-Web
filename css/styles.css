@@ -371,6 +371,7 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 1.25rem; /* 20px */
+  margin-bottom: 2.5rem; /* 40px */
 }
 
 .project-hero {
@@ -396,6 +397,34 @@ button:focus-visible {
   border-radius: var(--radius-2xl);
 }
 
+.project-detail__list {
+  list-style: none;
+  padding-left: 1.25rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: var(--leading-relaxed);
+  counter-reset: project-detail-list;
+}
+
+.project-detail__list li {
+  position: relative;
+  counter-increment: project-detail-list;
+}
+
+.project-detail__list li::before {
+  content: counter(project-detail-list) ".";
+  position: absolute;
+  left: -1.25rem;
+}
+
+.project-detail__list strong {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
 .project-detail__divider {
   border: none;
   border-top: 1px solid var(--color-border);
@@ -406,9 +435,8 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
   margin-top: var(--space-heading-gap);
+  margin-bottom: 2.8125rem; /* 45px */
 }
 
 .project-scope__row {
