@@ -350,7 +350,7 @@ button:focus-visible {
 .project-detail__meta {
   font-size: var(--text-sm);
   color: var(--color-text-tertiary);
-  margin-bottom: var(--space-section-gap);
+  margin-bottom: 2rem; /* 30px */
 }
 
 .project-detail__body p {
@@ -361,6 +361,10 @@ button:focus-visible {
 
 .project-detail__body p:last-child {
   margin-bottom: 0;
+}
+
+.project-detail__body {
+  margin-bottom: 2.8125rem; /* 45px */
 }
 
 .project-hero {
@@ -374,7 +378,7 @@ button:focus-visible {
   justify-content: center;
   color: var(--color-text-tertiary);
   font-size: var(--text-sm);
-  margin-bottom: var(--space-section-gap);
+  margin-top: var(--space-section-gap);
 }
 
 .project-detail__divider {
