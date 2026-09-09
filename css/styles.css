@@ -246,6 +246,85 @@ button:focus-visible {
 }
 
 /* ==========================================================================
+   Galería (view switcher + grilla filtrable)
+   ========================================================================== */
+
+.gallery-tabs {
+  position: relative;
+  display: inline-flex;
+  gap: 0.125rem;
+  padding: 0.25rem;
+  margin-bottom: 1.25rem;
+  background-color: var(--color-row-hover-bg);
+  border-radius: var(--radius-full);
+}
+
+.gallery-tabs__indicator {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  bottom: 0.25rem;
+  width: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.35s var(--ease-out), width 0.35s var(--ease-out);
+  will-change: transform, width;
+}
+
+.gallery-tabs__btn {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: color var(--transition-base) var(--ease-out);
+}
+
+.gallery-tabs__btn.is-active {
+  color: var(--color-text-primary);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.gallery-item {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  background-color: var(--color-card-bg);
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.gallery-item.is-hiding {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
    Educación
    ========================================================================== */
 

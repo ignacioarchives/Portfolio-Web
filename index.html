@@ -103,10 +103,33 @@
       </div>
     </section>
 
+    <!-- ================= GALERÍA ================= -->
+    <section class="section" id="galeria" aria-labelledby="galeria-title">
+      <h2 class="section-title reveal" id="galeria-title" style="--stagger-index: 5">Galería</h2>
+
+      <div class="gallery-tabs reveal" style="--stagger-index: 6" role="tablist" aria-label="Filtrar galería">
+        <span class="gallery-tabs__indicator" aria-hidden="true"></span>
+        <button type="button" class="gallery-tabs__btn is-active" data-filter="todo" role="tab" aria-selected="true">Todo</button>
+        <button type="button" class="gallery-tabs__btn" data-filter="web" role="tab" aria-selected="false">Web</button>
+        <button type="button" class="gallery-tabs__btn" data-filter="producto" role="tab" aria-selected="false">Producto</button>
+      </div>
+
+      <div class="gallery-grid reveal" style="--stagger-index: 7">
+        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/W-F360-1.webp" alt="Facilita360 — home del sitio web" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-1.webp" alt="MontoApp — pantalla principal" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/W-F360-2.webp" alt="Facilita360 — sección facilitadores" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-2.webp" alt="MontoApp — suscripciones" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/P-F360-3.webp" alt="Facilita360 — página de proceso" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-3.webp" alt="MontoApp — pantalla" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/B-F360-4.webp" alt="Facilita360 — identidad de marca" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-4.webp" alt="MontoApp — pantalla" loading="lazy" /></figure>
+      </div>
+    </section>
+
     <!-- ================= EDUCACIÓN ================= -->
     <section class="section" id="educacion" aria-labelledby="educacion-title">
-      <h2 class="section-title reveal" id="educacion-title" style="--stagger-index: 5">Educación</h2>
-      <div class="edu-list reveal" style="--stagger-index: 6">
+      <h2 class="section-title reveal" id="educacion-title" style="--stagger-index: 8">Educación</h2>
+      <div class="edu-list reveal" style="--stagger-index: 9">
         <a href="#" class="edu-item" data-cuelume-hover="press">
           <span class="edu-item__left">
             <span class="edu-item__institution"
@@ -132,8 +155,8 @@
 
     <!-- ================= CONTACTO ================= -->
     <section class="section" id="contacto" aria-labelledby="contacto-title">
-      <h2 class="section-title reveal" id="contacto-title" style="--stagger-index: 7">Contacto</h2>
-      <ul class="link-list reveal" style="--stagger-index: 8">
+      <h2 class="section-title reveal" id="contacto-title" style="--stagger-index: 10">Contacto</h2>
+      <ul class="link-list reveal" style="--stagger-index: 11">
         <li><a href="mailto:ignaciopdesign@gmail.com">Email</a></li>
         <li><a href="https://www.linkedin.com/in/ignacio-pacheco-467407422/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li>
@@ -144,6 +167,63 @@
       </ul>
     </section>
   </main>
+
+  <script>
+    (function () {
+      const tabs = document.querySelector(".gallery-tabs");
+      if (!tabs) return;
+
+      const indicator = tabs.querySelector(".gallery-tabs__indicator");
+      const buttons = Array.from(tabs.querySelectorAll(".gallery-tabs__btn"));
+      const items = Array.from(document.querySelectorAll(".gallery-item"));
+
+      function moveIndicator(btn) {
+        indicator.style.width = btn.offsetWidth + "px";
+        indicator.style.transform = "translateX(" + btn.offsetLeft + "px)";
+      }
+
+      function setActive(btn) {
+        buttons.forEach((b) => {
+          b.classList.toggle("is-active", b === btn);
+          b.setAttribute("aria-selected", b === btn ? "true" : "false");
+        });
+        moveIndicator(btn);
+      }
+
+      function applyFilter(filter) {
+        const toHide = items.filter(
+          (item) => !item.hidden && filter !== "todo" && item.dataset.category !== filter
+        );
+        const toShow = items.filter(
+          (item) => filter === "todo" || item.dataset.category === filter
+        );
+
+        toHide.forEach((item) => item.classList.add("is-hiding"));
+
+        window.setTimeout(() => {
+          items.forEach((item) => {
+            item.hidden = !(filter === "todo" || item.dataset.category === filter);
+          });
+          toShow.forEach((item) => item.classList.remove("is-hiding"));
+        }, 200);
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.classList.contains("is-active")) return;
+          setActive(btn);
+          applyFilter(btn.dataset.filter);
+        });
+      });
+
+      const initActive = tabs.querySelector(".gallery-tabs__btn.is-active");
+      requestAnimationFrame(() => moveIndicator(initActive));
+      window.addEventListener("resize", () => {
+        const active = tabs.querySelector(".gallery-tabs__btn.is-active");
+        if (active) moveIndicator(active);
+      });
+    })();
+  </script>
 
   <script type="module">
     import { bind } from "https://unpkg.com/cuelume@0.2.2/dist/index.js";
