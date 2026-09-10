@@ -266,8 +266,7 @@ button:focus-visible {
   bottom: 0.25rem;
   width: 0;
   border-radius: var(--radius-full);
-  background-color: var(--color-card-bg);
-  box-shadow: var(--shadow-card);
+  background-color: var(--color-text-primary);
   transition: transform 0.35s var(--ease-out), width 0.35s var(--ease-out);
   will-change: transform, width;
 }
@@ -285,11 +284,11 @@ button:focus-visible {
   color: var(--color-text-tertiary);
   border-radius: var(--radius-full);
   cursor: pointer;
-  transition: color var(--transition-base) var(--ease-out);
+  transition: color 0.35s var(--ease-out);
 }
 
 .gallery-tabs__btn.is-active {
-  color: var(--color-text-primary);
+  color: #ffffff;
 }
 
 .gallery-grid {
