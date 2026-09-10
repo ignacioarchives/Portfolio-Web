@@ -93,7 +93,7 @@
           >
           <span class="post-item__meta">Branding + Web (Framer)</span>
         </a>
-        <a href="proyectos/proyecto-3.html" class="post-item" data-cuelume-hover="press">
+        <a href="proyectos/Jesusaves.html" class="post-item" data-cuelume-hover="press">
           <span class="post-item__title"
             >Jesusaves
             <svg class="icon-arrow" aria-hidden="true"><use href="#icon-arrow-up-right"></use></svg></span
@@ -119,10 +119,13 @@
         <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-1.webp" alt="MontoApp — pantalla principal" loading="lazy" /></figure>
         <figure class="gallery-item" data-category="web"><img src="assets/facilita360/W-F360-2.webp" alt="Facilita360 — sección facilitadores" loading="lazy" /></figure>
         <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-2.webp" alt="MontoApp — suscripciones" loading="lazy" /></figure>
-        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/P-F360-3.webp" alt="Facilita360 — página de proceso" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="producto"><img src="assets/facilita360/P-F360-3.webp" alt="Facilita360 — página de proceso" loading="lazy" /></figure>
         <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-3.webp" alt="MontoApp — pantalla" loading="lazy" /></figure>
-        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/B-F360-4.webp" alt="Facilita360 — identidad de marca" loading="lazy" /></figure>
+        <figure class="gallery-item"><img src="assets/facilita360/B-F360-4.webp" alt="Facilita360 — identidad de marca" loading="lazy" /></figure>
         <figure class="gallery-item" data-category="producto"><img src="assets/MontoApp/P-M-4.webp" alt="MontoApp — pantalla" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="producto"><img src="assets/Jesusaves/P-J-1.webp" alt="Jesusaves — pantalla" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="web"><img src="assets/Jesusaves/W-J-2.webp" alt="Jesusaves — sitio web" loading="lazy" /></figure>
+        <figure class="gallery-item" data-category="web"><img src="assets/facilita360/W-F360-6.jpg" alt="Facilita360 — sitio web" loading="lazy" /></figure>
       </div>
     </section>
 
@@ -176,6 +179,23 @@
       const indicator = tabs.querySelector(".gallery-tabs__indicator");
       const buttons = Array.from(tabs.querySelectorAll(".gallery-tabs__btn"));
       const items = Array.from(document.querySelectorAll(".gallery-item"));
+
+      // La categoría se deriva de la letra inicial del nombre de archivo
+      // (ej. "W-F360-1.webp" -> web, "P-M-1.webp" -> producto). Así, para
+      // agregar una imagen nueva alcanza con nombrarla bien.
+      const CATEGORY_BY_PREFIX = { W: "web", P: "producto" };
+      items.forEach((item) => {
+        const img = item.querySelector("img");
+        if (!img) return;
+        const filename = img.getAttribute("src").split("/").pop() || "";
+        const prefix = filename.charAt(0).toUpperCase();
+        const category = CATEGORY_BY_PREFIX[prefix];
+        if (category) {
+          item.dataset.category = category;
+        } else {
+          delete item.dataset.category;
+        }
+      });
 
       function moveIndicator(btn) {
         indicator.style.width = btn.offsetWidth + "px";
