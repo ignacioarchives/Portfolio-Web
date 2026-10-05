@@ -531,3 +531,47 @@ button:focus-visible {
   color: var(--color-text-secondary);
   text-align: right;
 }
+
+/* Agregué estas variables de prueba por si no las tenés definidas en tu :root */
+:root {
+  --color-border: #e2e8f0;
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+  --font-weight-medium: 500;
+  --space-heading-gap: 2rem;
+}
+
+.project-scope {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: 8px; /* Opcional: suaviza las esquinas para una UI más limpia */
+  margin-top: var(--space-heading-gap);
+  margin-bottom: 2.8125rem;
+  overflow: hidden; /* Evita que el fondo de las filas pise los bordes redondeados */
+}
+
+.project-scope__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Permite que si el texto derecho es largo, fluya bien */
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.project-scope__row:last-child {
+  border-bottom: none;
+}
+
+.project-scope__label {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap; /* Evita que el título de la izquierda se rompa en dos líneas */
+}
+
+.project-scope__value {
+  color: var(--color-text-secondary);
+  text-align: right;
+  line-height: 1.5;
+}
